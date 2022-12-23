@@ -1,6 +1,6 @@
-import React from "react";
+import {Component, Fragment} from "react";
 
-export default class HigherOrderFunctions extends React.Component{
+export default class HigherOrderFunctions extends Component{
 
     // Constructed State
     constructor(){
@@ -21,13 +21,13 @@ export default class HigherOrderFunctions extends React.Component{
     renderAllItems = () => {
         const data = this.state.userData;
         const mapRows = data.map((item) => (
-            <React.Fragment key={item.id}>
+            <Fragment key={item.id}>
                 <li className="list-elements">
                     <span>Id: {item.id}</span>
                     <span>Name : {item.name}</span>
                     <span>User Type: {item.user_type}</span>
                </li>
-            </React.Fragment>
+            </Fragment>
         ));
         return mapRows;
     };
@@ -42,13 +42,13 @@ export default class HigherOrderFunctions extends React.Component{
         });
         
         const filteredData = filterOnType.map((item) => (
-            <React.Fragment key={item.id}>
+            <Fragment key={item.id}>
                 <li className="list-elements">
                     <span>Id: {item.id}</span>
                     <span>Name : {item.name}</span>
                     <span>User Type: {item.user_type}</span>
                </li>
-            </React.Fragment>
+            </Fragment>
         ));
 
         return filteredData;
@@ -64,13 +64,13 @@ export default class HigherOrderFunctions extends React.Component{
         });
         
         const filteredData = filterOnLetter.map((item) => (
-            <React.Fragment key={item.id}>
+            <Fragment key={item.id}>
                 <li className="list-elements">
                     <span>Id: {item.id}</span>
                     <span>Name : {item.name}</span>
                     <span>User Type: {item.user_type}</span>
                </li>
-            </React.Fragment>
+            </Fragment>
         ));
 
         return filteredData;
@@ -86,13 +86,13 @@ export default class HigherOrderFunctions extends React.Component{
         });
         
         const filteredData = filterAge.map((item) => (
-            <React.Fragment key={item.id}>
+            <Fragment key={item.id}>
                 <li className="list-elements">
                     <span>Id: {item.id}</span>
                     <span>Name : {item.name}</span>
                     <span>User Type: {item.user_type}</span>
                </li>
-            </React.Fragment>
+            </Fragment>
         ));
 
         return filteredData;
@@ -121,7 +121,7 @@ export default class HigherOrderFunctions extends React.Component{
     // Rendering all the Data in DOM
     render() {
         return (
-          <React.Fragment>
+          <>
             <div className="display-box">
                 <h1>All items</h1>
                 <ul>{this.renderAllItems()} </ul>
@@ -146,7 +146,7 @@ export default class HigherOrderFunctions extends React.Component{
                 <h1>Total Years of the Designers</h1>
                 <ul>{this.years()}</ul>
             </div>
-          </React.Fragment>
+          </>
           )
         };
 }
